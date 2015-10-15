@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	function showAd() {
+		//打开一个新的窗口。
+window.open("ad.html", "_blank", 
+            "heigth=150px, width=450px,location=no,toolbar=no");
+		}
+		
+	function small() {
+		//相对于原本窗口改变指定的大小。
+		window.resizeTo(50,50);
+		}
+	function testMoveBy() {
+		// 相对于原来的窗口移动指定的x、y值。
+		window.moveBy(200,0);
+		}
+	function testMoveTo() {
+		window.moveTo(200,400);
+		}
+		//每经过指定毫秒值后就会执行指定的代码。
+	var id = window.setInterval("showAd()", 2000);
+	//window.setTimeout("showAd()",2000);  经过指定毫秒值后执行指定 的代码一次。
+	function clearTest() {
+		//根据一个任务的ID取消的定时任务。
+		window.clearTimeout(id);
+		}
+</script>
+<title>wiodow对象</title>
+</head>
+
+<body>
+  <input type="button" onclick="showAd()" value="广告" />
+  <input type="button" onclick="small()" value="变小" />
+  <input type="button" onclick="testMoveBy()" value="moveBy" />
+  <input type="button" onclick="testMoveTo()" value="moveTo" />
+   <input type="button" onclick="clearTest()" value="取消定时任务！" />
+</body>
+</html>
