@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+	function onclickTest() {
+		alert("单击");
+		}
+		
+		function ondblclickTest() {
+		alert("双击");
+		}
+		
+		function showTime() {
+			var timeSpan = document.getElementById("timeSpan");
+			var date = Date().toLocaleString();
+			timeSpan.innerHTML = date.fontcolor("black");
+			}
+		function hideTime() {
+			var timeSpan = document.getElementById("timeSpan");
+			timeSpan.innerHTML = "";
+			}
+		function showInfo() {
+			var timeSpan = document.getElementById("userName");
+			timeSpan.innerHTML = "用户名是由6位数的英文或是汉子组成".fontcolor("red");
+			}
+		function hideInfo() {
+			var timeSpan = document.getElementById("userName");
+			timeSpan.innerHTML = "";
+			}
+		function changeTest() {
+			alert("城市被改变了！");
+			} 
+	
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	<input type="button" onclick="onclickTest()" value="单击" />
+    <input type="button" ondblclick="ondblclickTest()" value="双击" />
+	<span id="timeSpan"></span>
+    <span onmousemove="showTime()" onmouseout="hideTime()" ><font color="#00FF00">当前系统时间</font></span>
+    用户名<input type="text" onblur="hideInfo()" onfocus="showInfo()" />
+    <span id="userName"></span>
+    <select onchange="changeTest()">
+     <option>黑龙江</option>
+      <option>湖南</option>
+       <option>广州</option>
+    </select>
+</body>
+</html>
