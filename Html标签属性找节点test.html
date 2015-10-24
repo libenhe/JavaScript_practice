@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>根据html标签体的属性找节点test</title>
+</head>
+<script type="text/javascript">
+	
+	function checkAll(allNode) {
+	  var items = document.getElementsByName("item");
+	  for (var i=0; i<items.length; i++) {
+		  items[i].checked = allNode.checked;
+		  }
+	  }
+		
+	function getSum() {
+	  var items = document.getElementsByName("item");
+	  var sum = 0;
+	  for (var i=0; i<items.length; i++) {
+		  if (items[i].checked) {
+			  sum += parseInt(items[i].value);
+			  }
+		  }
+	 var spanNode = document.getElementById("sumid");
+	 spanNode.innerHTML = ("&nbsp;&nbsp;&nbsp;&yen;"+sum).fontcolor("red");
+		}
+		
+</script>
+
+
+<body>
+
+<div>电子商品列表如下：</div>
+	<br/>
+      <input type="checkbox" name="item" value="3000" />笔记本电脑3000元<br />
+      <input type="checkbox" name="item" value="1800"  />键盘1800元<br />
+      <input type="checkbox" name="item" value="300"  />鼠标200元<br />
+      <input type="checkbox" name="item" value="3000"  />音响300元<br />
+      <input type="checkbox" name="item" value="3000"  />手机4690元<br />
+      <input type="checkbox" name="item" value="3000"  />平板电脑2990元<br />
+      <input type="checkbox" name="all" onclick="checkAll(this)"  /> 全选<br />
+<input type="button" value="总金额" onclick="getSum()" />
+       <span id="sumid"></span>
+
+</body>
+</html>
