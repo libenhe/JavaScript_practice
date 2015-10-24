@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>根据html标签体的属性找节点</title>
+<script type="text/javascript">
+
+	function showText() {
+		var inputNode = document.getElementById("userName");
+		    inputNode.value = "文本设置好了！";
+		}
+	function showPhotos() {
+		var images = document.getElementsByTagName("img");
+		for (var i=0; i < images.length; i++) {
+			images[i].src = "1.jpg";
+			images[i].width = "150";
+			images[i].height = "200";
+			}
+		}
+</script>
+
+</head>
+
+<body>
+	<input type="text" id="userName" value="输入用户名！" />
+    <input type="button" onclick="showText()" value="设置文本" />
+	<hr/>
+    <img src="" />
+    <img src="" />
+    <img src="" />
+    <input type="button" onclick="showPhotos()" value="显示图片" />
+</body>
+</html>
