@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	
+	function showCity() {
+		var citys = [[], ["哈尔滨","大庆","齐齐哈尔"], ["长沙","湘潭","衡阳"]];
+		
+		var provinceNode = document.getElementById("province");
+		
+		var provinceSelectedIndex = provinceNode.selectedIndex;
+		var cityDatas = citys[provinceSelectedIndex];
+		
+		var cityNode = document.getElementById("city");
+	  //	清除的方法一
+	  //	cityNode.options.length = 1; //设置option长度为1
+		// 方法二  用循环手动清除
+		var childrenNode = cityNode.childNodes;
+		for (var i=0; i<childrenNode.length; ) {
+			cityNode.removeChild(childrenNode[i]);
+			}		
+		
+		
+		for (var index=0; index<cityDatas.length; index++) {
+			var optionNew = document.createElement("option");
+			optionNew.innerHTML = cityDatas[index];
+			cityNode.appendChild(optionNew);
+			}
+		}
+</script>
+<title>城市的联动框</title>
+</head>
+
+<body>
+		省份<select onchange="showCity()" id="province">
+        		<option>省份</option>
+                <option>黑龙江</option>
+                <option>湖南</option>
+        </select>
+        城市<select id="city"><option>城市</option></select>
+</body>
+</html>
