@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+	//添加
+	 function addFile() {
+			var trNode = document.createElement("tr");
+			var tdNode1 = document.createElement("td");
+			var tdNode2 = document.createElement("td");
+			
+			tdNode1.innerHTML = "<input type='flie'/>";
+			tdNode2.innerHTML ="<a href='#' onclick='delFile(this)' >删除附件</a>";
+			
+			trNode.appendChild(tdNode1);
+			trNode.appendChild(tdNode2);
+			
+			var tbodyNode = document.getElementsByTagName("tbody")[0];
+	     	var lastRow = document.getElementById("lastRow");
+		
+		    tbodyNode.insertBefore(trNode,lastRow);
+	}
+	//删除
+	function delFile(aNode) {
+		var trNode = aNode.parentNode.parentNode;
+		var tbodyNode = document.getElementsByTagName("tbody")[0];
+		tbodyNode.removeChild(trNode);
+		}
+		
+		
+</script>
+<title>增加和删除附件</title>
+</head>
+
+<body>
+
+  	<table>
+   		<tr>
+        	<td><input type="file" /></td>
+        	<td><a href="#" onclick="delFile(this)">删除附件</a></td>
+        </tr>
+        
+        <tr id="lastRow">
+        	<td colspan="2"><input onclick="addFile()" type="button" value="添加附件"/></td>
+        </tr>
+	</table>
+</body>
+</html>
