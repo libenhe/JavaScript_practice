@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+
+		function showCode() {
+			
+			var datas = ['A','B','李','本','贺','5','1','9'];
+			
+			var code = "";
+			for (var i=0; i<4; i++) {
+				var index = Math.floor(Math.random()*datas.length);
+				code += datas[index];
+				}
+				var spanNode = document.getElementById("code");
+				spanNode.innerHTML = code;
+				
+				spanNode.style.fontSize ="20px";
+				spanNode.style.color = "green";
+				spanNode.style.backgroundColor="gray";
+				spanNode.style.textDecoration = "line-through";
+			}
+		
+		function ready() {
+			showCode();
+			}
+</script>
+
+<title>操作CSS样式</title>
+</head>
+
+<body onload="ready()">
+	<span id="code"></span><a href="#" onclick="showCode()">      看不清，换一张</a>
+</body>
+</html>
